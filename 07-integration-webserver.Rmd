@@ -1,0 +1,65 @@
+---
+title: "Install Webserver"
+output: html_notebook
+---
+
+The Apache web server is industry leading software for serving content across platforms. Apache does not depend on R, but you can embed R content into Apache via an iframe. If you host a Shiny application on RStudio Connect, then you can easily embed it into a web site or blog using the iframe tag.
+
+### Install Apache
+
+Install Apache. For detailed instructions see [here](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04).
+
+## Ubuntu
+```{bash}
+sudo apt-get install -y apache2
+```
+
+Verify that Apache was installed properly by pointing your browser to your public IP. You should see the Apache initialization page.
+
+## Update your html path
+
+By default, the Apache web server uses `/var/www/html/` as its top level directory. You can redirect this path to your RStudio project directory. Create a symbolic link from `/var/www/html/` to your project path as shown below.
+
+```{bash}
+sudo mv /var/www/html/index.html /var/www/html/index.html_backup
+sudo ln -s /home/rstudio/r-admin-2018/bitcoin/03-html/ /var/www/html
+```
+
+Very that your project path has loaded by pointing your web browser to your public IP. You should see the the index page stored in your project directory.
+
+
+## RedHat / CentOS
+
+```{bash}
+sudo yum install nginx
+```
+
+To enable an instance of Nginx running on the same server to act as a front-end proxy to RStudio Connect you would add commands like the following to your nginx.conf file. This configuration assumes RStudio Connect is running on the same host as Nginx and listening for HTTP requests on the :3939 port. If you are proxying to RStudio Connect on a different machine or port, replace the localhost:3939 references with the correct address of the server where RStudio Connect is hosted.
+
+```{conf}
+http {
+  map $http_upgrade $connection_upgrade {
+    default upgrade;
+    ''      close;
+  }
+  server {
+    listen 80;
+
+    client_max_body_size 0; # Disables checking of client request body size
+
+    location / {
+      proxy_set_header X-RSC-Request $scheme://$host:$server_port$request_uri;
+      proxy_pass http://localhost:3939;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection $connection_upgrade;
+      proxy_http_version 1.1;
+      proxy_buffering off; # Required for XHR-streaming
+    }
+  }
+}
+
+```
+
+```{bash}
+sudo systemctl restart nginx
+```
