@@ -1,0 +1,29 @@
+---
+title: "Build R from Source"
+output: html_notebook
+---
+
+Building R from source guarantees that R will run on your server, and it will allow you to run multiple versions of R side by side. Running multiple versions of R helps you maintain consistent R projects and Shiny apps over time.
+
+You may need to include this line to install a variety of dependencies that R/RStudio Server may need.
+
+```{bash}
+sudo yum install -y epel-release
+sudo yum groupinstall -y 'Development Tools'
+```
+
+Then, build R. It's recommended to build R from source on RedHat / CentOS
+
+```{bash}
+cd /opt
+sudo wget https://cran.rstudio.com/src/base/R-3/R-3.4.3.tar.gz
+sudo tar xzvf R-3.4.3.tar.gz 
+cd R-3.4.3
+
+sudo ./configure --prefix=/opt/R/3.4.3 --enable-R-shlib --with-blas --with-lapack
+sudo make
+sudo make install
+
+/opt/R/3.4.3/bin/R
+```
+

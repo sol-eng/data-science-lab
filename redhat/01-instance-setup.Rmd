@@ -11,28 +11,17 @@ Create a new sever instance on AWS EC2. See the [AWS documentation](https://docs
 
 ## Log into your server
 
-### Ubuntu
-
-```{bash}
-ssh -i ~/.ssh/my.pem ubuntu@<my-server-ip>
-```
-
-### RedHat / CentOS
 ```{bash}
 ssh -i ~/.ssh/my.pem ec2-user@<my-server-ip>
 ```
 
 ## Update your system
 
-## Ubuntu 
-
 ```{bash}
-sudo apt-get update
+sudo yum update
 ```
 
 ## Add a user
-
-### Ubuntu / RedHat / CentOS
 
 ```{bash}
 sudo useradd -m rstudio

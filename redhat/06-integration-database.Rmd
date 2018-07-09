@@ -6,7 +6,7 @@ output: html_notebook
 PostgreSQL is a powerful open source database. You can use PostgreSQL to store and process data outside of R. Install PostgreSQL below. For more instructions, see [here](# https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
 ).
 
-### Intstall
+## Install
 
 Install PostgreSQL
 
@@ -14,7 +14,7 @@ Install PostgreSQL
 sudo apt-get install postgresql postgresql-contrib
 ```
 
-### Configure
+## Configure
 
 Create a database user called `rstudio`. Note that this database user is not the same user as the Linux user. Create a new database called `testb`. Create a new password and test the connection.
 

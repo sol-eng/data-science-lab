@@ -9,17 +9,8 @@ RStudio Connect can email reports on demand or according to a schedule. Email is
 
 Install sendmail and restart the web server.
 
-
-## Ubuntu
-
 ```{bash}
 sudo apt-get install sendmail
 sudo sendmailconfig
 sudo service apache2 restart
-```
-
-## RedHat / CentOS
-
-```{bash}
-sudo yum installsendmail
 ```

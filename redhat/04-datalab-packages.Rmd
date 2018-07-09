@@ -1,0 +1,17 @@
+---
+title: "Install R Packages"
+output: html_notebook
+---
+
+It's useful to install some packages into the system library so that they are available to all R users. Install the following packages as `sudo` so they are available to all R users.
+
+## install R packages
+
+```{bash}
+R
+```
+
+```{r}
+install.packages(c("shiny", "rmarkdown", "tidyverse", "odbc",
+"rstudioapi", repos = "http://cran.rstudio.com/"))
+```

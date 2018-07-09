@@ -5,8 +5,6 @@ output: html_notebook
 
 Most Linux applications require package dependencies. R and RStudio require many of the packages listed below. You may require additional Linux packages when you install R packages. The exact list of dependencies will depend on what software you install.
 
-### Ubuntu
-
 ```{bash}
 ### SSL: Secure your sever
 sudo apt-get -y install libcurl4-openssl-dev openssl libssl-dev openssh-client
@@ -22,25 +20,5 @@ sudo apt-get install -y unixodbc unixodbc-dev odbc-postgresql
 
 ### Email: Send email from your server
 sudo apt-get install -y sendmail
-```
-
-### RedHat / CentOS
-
-```{bash}
-### SSL: Secure your sever
-sudo yum install -y curl-devel openssl openssl-devel openssh-clients
-
-### Tex: Publish pdf documents
-sudo yum install -y texlive texlive-*.noarch
-
-### Git: Version your code
-sudo yum install -y git
-
-### Databases: Connect to your databases
-sudo yum install -y unixODBC unixODBC-devel odbc-postgresql
-
-### Email: Send email from your server
-sudo yum install -y sendmail
-
 ```
 

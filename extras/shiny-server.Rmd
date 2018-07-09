@@ -1,0 +1,35 @@
+---
+title: "Install Shiny Server"
+output: html_notebook
+---
+
+Open Source Shiny Server provides a platform on which you can host multiple Shiny applications on a single server, each with their own URL or port. It enables you to support non-websocket-enabled browsers like Internet Explorer 10, and is available under an AGPLv3 license.
+
+You should already have shiny, and rmarkdown installed. If not:
+
+```{bash}
+sudo /opt/R/3.4.3/bin/Rscript -e 'install.packages(c("shiny", "rmarkdown"), repos = "http://cran.rstudio.com/")'
+```
+
+Then, download Shiny server:
+
+### Ubuntu
+
+```{bash}
+# Download
+wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.7.907-amd64.deb
+
+# Install
+sudo gdebi shiny-server-1.5.7.907-amd64.deb
+```
+
+
+### RedHat / CentOS
+
+```{bash}
+# Download
+wget https://download3.rstudio.org/centos6.3/x86_64/shiny-server-1.5.7.907-rh6-x86_64.rpm
+
+# Install
+sudo yum install --nogpgcheck shiny-server-1.5.7.907-rh6-x86_64.rpm
+```
