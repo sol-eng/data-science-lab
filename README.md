@@ -1,4 +1,4 @@
-# Data Lab
+# Data Science Lab
 
 These files describe how to build a data lab with RStudio professional products. This guide assumes you are using EC2 on AWS, but you can use any sandbox. Here are the requirements. For detailed instructions see the [RStudio admin guides](http://docs.rstudio.com/)
 
