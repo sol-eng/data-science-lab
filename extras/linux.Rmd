@@ -1,0 +1,36 @@
+---
+title: "Useful Linux tools for R Admins"
+output: html_notebook
+---
+
+# Basic commands
+
+```{bash}
+ls   # list directory contents
+cp   # copy a file
+mv   # mv a file
+cd   # change directories
+pwd  # return working directory name
+```
+
+# Diagnostic tools
+
+```{bash}
+## Search processes
+ps -aux
+
+## Search processes for a specific user
+ps -aux | grep <username>
+
+## Network stats for listening ports
+netstat -lntp
+
+## Search within a folder
+grep -rnw ./my/folder -e 'text-to-search-for'
+
+## Search for Linux dependencies
+apt-cache search libcurl* # Ubuntu
+yum search search libcurl* # RHEL
+```
+
+

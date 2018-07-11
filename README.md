@@ -6,6 +6,8 @@ These files describe how to build a data lab with RStudio professional products.
 * An internet connection
 * Sudo access
 
+If you are new to Linux, I highly recommend reading [The Unix Workbench](https://seankross.com/the-unix-workbench/) by Sean Kross. This concise manual explains basic commands for working with Unix/Linux.
+
 ### Instance
 
 Create a Linux Server on AWS. Or you can use a VM on your local desktop.
