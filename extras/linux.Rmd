@@ -3,6 +3,8 @@ title: "Useful Linux tools for R Admins"
 output: html_notebook
 ---
 
+If you are new to Linux, consider reading [The Unix Workbench](https://seankross.com/the-unix-workbench/) by Sean Kross. This concise manual explains basic commands for working with Unix/Linux.
+
 # Basic commands
 
 ```{bash}
