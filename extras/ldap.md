@@ -46,6 +46,7 @@ sudo apt install slapd ldap-utils
 
 7. Setup a domain for the LDAP server. There will be several prompts, here are the selections or inputs to use for each:
 
+```
 1. Select No
 2. Use example.com as the domain name
 3. Use example as the company name
@@ -55,6 +56,7 @@ sudo apt install slapd ldap-utils
 7. Yes
 8. Yes
 9. Yes
+```
 
 ```
 sudo dpkg-reconfigure slapd
