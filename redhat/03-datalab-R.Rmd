@@ -10,6 +10,7 @@ You may need to include this line to install a variety of dependencies that R/RS
 ```{bash}
 sudo yum install -y epel-release
 sudo yum groupinstall -y 'Development Tools'
+sudo yum-builddep R
 ```
 
 Then, build R. It's recommended to build R from source on RedHat / CentOS
