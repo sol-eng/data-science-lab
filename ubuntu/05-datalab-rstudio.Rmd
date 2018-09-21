@@ -9,17 +9,19 @@ RStudio professional products make it easy to build a salable data lab that inte
 
 RStudio Server Pro lets you run multiple versions of R, run multiple R sessions, and connect to your enterprise databases. Install an eval version of RStudio Server Pro below. After installing, you can access RStudio Server Pro by pointing your browser at `<my-server-ip>:8787`.
 
+Find a download link for the most recent version of RStudio Server Pro on the [product website](https://www.rstudio.com/products/rstudio/download-commercial/).
+
 ```{bash}
-# Download
+# Download (update this link to the most recent available version)
 sudo wget https://download2.rstudio.org/rstudio-server-pro-1.1.419-amd64.deb
 
-# Install
+# Install (update this reference to the most recent available version)
 sudo apt-get install gdebi-core
 sudo gdebi rstudio-server-pro-1.1.419-amd64.deb
 
 # Configure
 echo "
-admin-enabled=1" | 
+admin-enabled=1" |
 sudo tee /etc/rstudio/rserver.conf > /dev/null
 
 # Restart
@@ -30,11 +32,13 @@ sudo rstudio-server restart
 
 RStudio Connect lets you host Shiny apps, automate jobs, send reports via email, and host API's. Install an eval version of RStudio Connect below. After install, you can access RStudio Connect by pointing your browser at `<my-server-ip>:3939` and creating a new user account. The fist user to log into RStudio Connect will be granted administrator privileges.
 
+Find a download link for the most recent version of RStudio Connect on the [product website](https://www.rstudio.com/products/connect/download-commercial/).
+
 ```{bash}
-# Download
+# Download (update this link to the most recent available version)
 sudo wget https://s3.amazonaws.com/rstudio-connect/ubuntu-12.04/x86_64/rstudio-connect_1.5.12.1-10_amd64.deb
 
-# Install
+# Install (update this reference to the most recent available version)
 sudo apt-get install gdebi-core
 sudo gdebi rstudio-connect_1.5.12.1-10_amd64.deb
 
